@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 public class OrderTest {
 
     private WebDriver driver;
@@ -24,6 +25,7 @@ public class OrderTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+
     }
 
     @AfterEach
