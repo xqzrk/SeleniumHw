@@ -44,7 +44,7 @@ public class OrderTest {
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.tagName("button")).click();
         String expected = "  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-        String actual = driver.findElement(By.tagName("p")).getText();
+        String actual = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
         assertEquals(expected, actual);
     }
 
@@ -97,7 +97,7 @@ public class OrderTest {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79998887766");
         driver.findElement(By.tagName("button")).click();
-        WebElement expected = driver.findElement(By.className("input_invalid"));
+        WebElement expected = driver.findElement(By.cssSelector("[data-test-id='agreement'].input_invalid"));
         assertTrue(expected.isDisplayed());
     }
 }
